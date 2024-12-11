@@ -10,7 +10,7 @@ const Hero = () => {
         <h1 className='text-[10px] md:text-[14px] font-semibold  tracking-[3px] leading-auto'> NEW ARRIVAL</h1>
         <h1 className='md:pt-5 text-[25px] md:text-[52px] font-semibold md:font-bold leading-10 md:leading-[45px] tracking-[0px] text-[#B88E2F]'>Discover Our</h1>
         <h1 className='md:pt-5 text-[25px] md:text-[52px] font-semibold md:font-bold leading-6 md:leading-[45px] tracking-[0px] text-[#B88E2F]'>New Collection</h1>
-         <p className='text-[10px] md:text-[16px] leading-[15px]  md:leading-[20px] font-medium text-[#333333] '>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis'</p>   
+         <p className='text-[10px] md:text-[16px] leading-[15px]  md:leading-[20px] font-medium text-[#333333]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis</p>   
         <button className='mt-6 w-[100px] h-[40px]  md:w-[200px] md:h-[50px] px-[30px] py-[5px] md:px-[60px] md:py-[10px]  bg-[#B88E2F] text-white text-center md:text-[14px] text-[8px] font-bold'>BUY NOW</button>
       </div>
     </div>
