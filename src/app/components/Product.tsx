@@ -76,7 +76,7 @@ const Product = () => {
         <h1 className='text-center font-bold text-[40px] leading-[48px]'>Our Products</h1>
 
 
-          <div className="grid grid-cols-1  mt-8 sm:grid-cols-2 lg:grid-cols-4 "> 
+          <div className="grid grid-cols-1 gap-y-[350px]  mt-8 sm:grid-cols-2 lg:grid-cols-4 "> 
                 {
             data.map((ele)=>{
                    return <Card1 key={ele.id} data={ele}/> 
