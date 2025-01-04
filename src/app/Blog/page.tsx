@@ -3,9 +3,9 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Image from 'next/image'
-import { MdDelete } from "react-icons/md";
+
 import { IoIosArrowForward } from "react-icons/io";
-import { MdLocationPin } from "react-icons/md";
+
 import { GrTrophy } from "react-icons/gr";
 import { IoIosContact } from "react-icons/io";
 import { IoIosGift } from "react-icons/io";
