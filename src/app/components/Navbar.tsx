@@ -7,8 +7,8 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { BsCart3 } from "react-icons/bs";
 const Navbar = () => {
   return (
-    <div className='w-[679px] h-auto md:w-[1440px] md:h-[100px] bg-[#ffffff]'>
-        <div className='flex justify-between w-[100%] h-auto md:w-[1286px] md:h-[41px] py-2 px-5 m-auto'>
+    <div className=' h-auto md:w-[100%] md:h-[100px] bg-[#ffffff]'>
+        <div className='flex justify-between w-[100%] h-auto md:w-[85%] md:h-[38px] py-2 px-5 m-auto'>
                <div className='hidden md:block'>
                 <Image width={185} height={41} alt='help' src={logo}  className='w-[185px] h-[50px]' />
                </div>
