@@ -5,6 +5,7 @@ import { BsPerson } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { BsCart3 } from "react-icons/bs";
+import Link from 'next/link';
 const Navbar = () => {
   return (
     <div className=' h-auto md:w-[100%] md:h-[100px] bg-[#ffffff]'>
@@ -14,10 +15,18 @@ const Navbar = () => {
                </div>
                <div className='pt-5 hidden md:block'>
                 <ul className='flex justify-between font-medium  space-x-10 text-[16px]'>
+                <Link href="/">
                   <li>Home</li>
+                </Link>
+                <Link href="/Shop">
                   <li>Shop</li>
+                  </Link>
+                  <Link href='/Blog'>
                   <li>Blog</li>
+                  </Link>
+                  <Link href='/Contact'>
                   <li>Contact</li>
+                  </Link>
                 </ul>
                </div>
 

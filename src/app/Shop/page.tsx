@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Image from 'next/image'
@@ -149,7 +150,7 @@ const page = () => {
         {/* hero section  */}
         <div className='w-[100%] h-[190px] md:h-[350px] relative'>
             <div className='w-[100%] h-[190px] md:h-[350px] absolute bg-cover'>
-                <Image src={Rectangle} alt='sa' width={10} height={350} className='w-[100%] h-[190px] md:h-[350px]' />    
+                <Image src={Rectangle} alt='sa' width={1000} height={350} className='w-[100%] h-[190px] md:h-[350px]' />    
                     
             </div>
             <div className='absolute  w-[100%] h-[190px] md:h-[350px] flex flex-col justify-center items-center'>
