@@ -5,7 +5,7 @@ import mask from '../assert/mask.png'
 import badroom from '../assert/badroom.png'
 const Range = () => {
   return (
-    <div className='px-[20px] w-[80%] h-[685px] m-auto  md:mt-[90px] '>
+    <div className='px-[20px] w-[80%] h-[685px] m-auto  mt-[200px] md:mt-[90px] '>
         <div className='text-center pt-[30px]'>
                 <h1 className=' text-[20px] font-bold md:text-[32px] text-[#333333] md:leading-[34px] '>Browse The Range</h1>
                 <p className='text-base mt-2 font-normal md:text-[20px] md:leading-[30px] text-[#666666]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

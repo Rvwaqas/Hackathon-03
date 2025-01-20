@@ -3,129 +3,140 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Image from 'next/image'
 import Rectangle from '../../../public/Rectangle.png'
-
+import { client } from '@/sanity/lib/client'
 import { IoIosArrowForward } from "react-icons/io";
 import { BsFillGridFill } from "react-icons/bs";
 import { BsViewList } from "react-icons/bs";
 import Card1 from '../components/Card1';
 import { GrTrophy } from "react-icons/gr";
 import Footer from '../components/Footer';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 
 interface Data{
 
     id:number,
-    imag:string,
-    heading:string,
-    description:string,
-    price1a:string,
-    price1b:string
+    imag:any ,
+    name:string,
+    category:string,
+    price:string,
+    
 }
 
 
 
-const data:Data[]=[
-    {
-        id:1,
-        imag :'/a1.png',
-        heading:'Syltherine',
-        description:'Stylish cafe chair',
-        price1a:'Rp 2.500.000',
-        price1b:'Rp 3.500.000'
-      },
-      {id:2,
-        imag :'/b2.png',
-        heading:'Cake',
-        description:'Stylish cafe chair',
-        price1a:'Rp 2.500.000',
-        price1b:'Rp 3.500.000'},
-      {id:3,
-        imag :'/c3.png',
-        heading:'Lays',
-        description:'Stylish cafe chair',
-        price1a:'Rp 2.500.000',
-        price1b:'Rp 3.500.000'},
-        {id:4,
-            imag :'/d4.png',
-            heading:'haya',
-            description:'Stylish cafe chair',
-            price1a:'Rp 2.500.000',
-            price1b:'Rp 3.500.000'},
-            {id:5,
-              imag :'/d4.png',
-              heading:'Zip',
-              description:'Stylish cafe chair',
-              price1a:'Rp 2.500.000',
-              price1b:'Rp 3.500.000'},
-              {id:6,
-                imag :'/d4.png',
-                heading:'Hero',
-                description:'Stylish cafe chair',
-                price1a:'Rp 2.500.000',
-                price1b:'Rp 3.500.000'},
-                {id:7,
-                  imag :'/d4.png',
-                  heading:'Foodie',
-                  description:'Stylish cafe chair',
-                  price1a:'Rp 2.500.000',
-                  price1b:'Rp 3.500.000'},
-                  {id:8,
-                    imag :'/d4.png',
-                    heading:'Lunch',
-                    description:'Stylish cafe chair',
-                    price1a:'Rp 2.500.000',
-                    price1b:'Rp 3.500.000'},
-                    {
-                    id:9,
-                    imag :'/a1.png',
-                    heading:'Syltherine',
-                    description:'Stylish cafe chair',
-                    price1a:'Rp 2.500.000',
-                    price1b:'Rp 3.500.000'
-                  },
-                  {id:10,
-                    imag :'/b2.png',
-                    heading:'Cake',
-                    description:'Stylish cafe chair',
-                    price1a:'Rp 2.500.000',
-                    price1b:'Rp 3.500.000'},
-                  {id:11,
-                    imag :'/c3.png',
-                    heading:'Lays',
-                    description:'Stylish cafe chair',
-                    price1a:'Rp 2.500.000',
-                    price1b:'Rp 3.500.000'},
-                    {id:12,
-                        imag :'/d4.png',
-                        heading:'haya',
-                        description:'Stylish cafe chair',
-                        price1a:'Rp 2.500.000',
-                        price1b:'Rp 3.500.000'},
-                        {id:13,
-                          imag :'/d4.png',
-                          heading:'Zip',
-                          description:'Stylish cafe chair',
-                          price1a:'Rp 2.500.000',
-                          price1b:'Rp 3.500.000'},
-                          {id:14,
-                            imag :'/d4.png',
-                            heading:'Hero',
-                            description:'Stylish cafe chair',
-                            price1a:'Rp 2.500.000',
-                            price1b:'Rp 3.500.000'},
-                            {id:15,
-                              imag :'/d4.png',
-                              heading:'Foodie',
-                              description:'Stylish cafe chair',
-                              price1a:'Rp 2.500.000',
-                              price1b:'Rp 3.500.000'},
-                              {id:16,
-                                imag :'/d4.png',
-                                heading:'Lunch',
-                                description:'Stylish cafe chair',
-                                price1a:'Rp 2.500.000',
-                                price1b:'Rp 3.500.000'}
-]
+const qury=`*[_type=='product'] | order(_createdAt desc)[0...8]{
+    _id,name,category,
+      price,
+      "image":image.asset->url
+  }`
+  
+    const data:Data[] = await client.fetch(qury)
+
+// const data:Data[]=[
+//     {
+//         id:1,
+//         imag :'/a1.png',
+//         heading:'Syltherine',
+//         description:'Stylish cafe chair',
+//         price1a:'Rp 2.500.000',
+//         price1b:'Rp 3.500.000'
+//       },
+//       {id:2,
+//         imag :'/b2.png',
+//         heading:'Cake',
+//         description:'Stylish cafe chair',
+//         price1a:'Rp 2.500.000',
+//         price1b:'Rp 3.500.000'},
+//       {id:3,
+//         imag :'/c3.png',
+//         heading:'Lays',
+//         description:'Stylish cafe chair',
+//         price1a:'Rp 2.500.000',
+//         price1b:'Rp 3.500.000'},
+//         {id:4,
+//             imag :'/d4.png',
+//             heading:'haya',
+//             description:'Stylish cafe chair',
+//             price1a:'Rp 2.500.000',
+//             price1b:'Rp 3.500.000'},
+//             {id:5,
+//               imag :'/d4.png',
+//               heading:'Zip',
+//               description:'Stylish cafe chair',
+//               price1a:'Rp 2.500.000',
+//               price1b:'Rp 3.500.000'},
+//               {id:6,
+//                 imag :'/d4.png',
+//                 heading:'Hero',
+//                 description:'Stylish cafe chair',
+//                 price1a:'Rp 2.500.000',
+//                 price1b:'Rp 3.500.000'},
+//                 {id:7,
+//                   imag :'/d4.png',
+//                   heading:'Foodie',
+//                   description:'Stylish cafe chair',
+//                   price1a:'Rp 2.500.000',
+//                   price1b:'Rp 3.500.000'},
+//                   {id:8,
+//                     imag :'/d4.png',
+//                     heading:'Lunch',
+//                     description:'Stylish cafe chair',
+//                     price1a:'Rp 2.500.000',
+//                     price1b:'Rp 3.500.000'},
+//                     {
+//                     id:9,
+//                     imag :'/a1.png',
+//                     heading:'Syltherine',
+//                     description:'Stylish cafe chair',
+//                     price1a:'Rp 2.500.000',
+//                     price1b:'Rp 3.500.000'
+//                   },
+//                   {id:10,
+//                     imag :'/b2.png',
+//                     heading:'Cake',
+//                     description:'Stylish cafe chair',
+//                     price1a:'Rp 2.500.000',
+//                     price1b:'Rp 3.500.000'},
+//                   {id:11,
+//                     imag :'/c3.png',
+//                     heading:'Lays',
+//                     description:'Stylish cafe chair',
+//                     price1a:'Rp 2.500.000',
+//                     price1b:'Rp 3.500.000'},
+//                     {id:12,
+//                         imag :'/d4.png',
+//                         heading:'haya',
+//                         description:'Stylish cafe chair',
+//                         price1a:'Rp 2.500.000',
+//                         price1b:'Rp 3.500.000'},
+//                         {id:13,
+//                           imag :'/d4.png',
+//                           heading:'Zip',
+//                           description:'Stylish cafe chair',
+//                           price1a:'Rp 2.500.000',
+//                           price1b:'Rp 3.500.000'},
+//                           {id:14,
+//                             imag :'/d4.png',
+//                             heading:'Hero',
+//                             description:'Stylish cafe chair',
+//                             price1a:'Rp 2.500.000',
+//                             price1b:'Rp 3.500.000'},
+//                             {id:15,
+//                               imag :'/d4.png',
+//                               heading:'Foodie',
+//                               description:'Stylish cafe chair',
+//                               price1a:'Rp 2.500.000',
+//                               price1b:'Rp 3.500.000'},
+//                               {id:16,
+//                                 imag :'/d4.png',
+//                                 heading:'Lunch',
+//                                 description:'Stylish cafe chair',
+//                                 price1a:'Rp 2.500.000',
+//                                 price1b:'Rp 3.500.000'}
+// ]
 
 
 
@@ -136,11 +147,46 @@ const data:Data[]=[
 
 const page = () => {
   
-  
-  
-  
-  
-  
+    var settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        initialSlide: 0,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              initialSlide: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      };
+     
+
+
+
+
+
     return (
     <>
     <div className='w-[100%] h-screen'>
@@ -204,6 +250,36 @@ const page = () => {
 {/* card section start */}
 
 <div className='mt-10 w-[100%] h-auto '>
+
+<div className="slider-container">
+      <Slider {...settings}>
+        <div>
+          <h3>1</h3>
+        </div>
+        <div>
+          <h3>2</h3>
+        </div>
+        <div>
+          <h3>3</h3>
+        </div>
+        <div>
+          <h3>4</h3>
+        </div>
+        <div>
+          <h3>5</h3>
+        </div>
+        <div>
+          <h3>6</h3>
+        </div>
+        <div>
+          <h3>7</h3>
+        </div>
+        <div>
+          <h3>8</h3>
+        </div>
+      </Slider>
+    </div>    
+
         <div className='mt-2 w-[85%] h-auto m-auto'>
             <div className='grid grid-cols-1 justify-center sm:grid-cols-2 md:grid-cols-4  gap-y-[350px]'>
                 {
@@ -214,7 +290,7 @@ const page = () => {
 
             </div>
 
-            <div className='w-[100%] h-[90px]  mt-[350px]'>
+             <div className='w-[100%] h-[90px]  mt-[350px]'>
                 <div className='flex justify-center items-baseline gap-2 md:gap-6 w-[392px] h-[90px] m-auto '>
                     <h1 className='rounded-[10px] bg-[#B88E2F] px-3 py-1  md:px-5 md:py-2 text-center text-white text-[16px] md:text-[20px] font-normal leading-[30px]'>1</h1>
                     <h1 className='rounded-[10px] bg-[#F9F1E7] px-3 py-1  md:px-5 md:py-2 text-center text-[16px] md:text-[20px] font-normal leading-[30px]'>2</h1>
@@ -222,10 +298,11 @@ const page = () => {
                     <h1 className='rounded-[10px] bg-[#F9F1E7] px-3 py-1  md:px-5 md:py-2 text-center text-[16px] md:text-[20px] font-normal leading-[30px]'>Next</h1>
                 </div>
 
-            </div>
+            </div> 
         </div>
-        
 
+        
+            
 
 
 
