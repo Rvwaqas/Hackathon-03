@@ -35,7 +35,7 @@ const Navbar = () => {
                 <li><BsPerson className='  w-[28px] h-[28px]' /></li>
                 <li><CiSearch className='w-[28px] h-[28px]' /></li>
                 <li><IoMdHeartEmpty className='w-[28px] h-[28px]' /></li>
-                <li><BsCart3 className='w-[28px] h-[28px]' /></li>
+                <Link href={'/Cart'}><li><BsCart3 className='w-[28px] h-[28px]' /></li></Link>
                 </ul>
 
                 </div> 

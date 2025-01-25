@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 const Hero = () => {
   return (
     <div className='w-[100%] h-auto  md:w-[100%] md:h-[716.8] relative'>
@@ -10,7 +11,7 @@ const Hero = () => {
         <h1 className=' pt-3 md:pt-3 text-[18px] leading-[20px]  md:text-[52px] font-bold  md:leading-[55px] text-[#B88E2F]'>Discover Our <br /> New Collection</h1>
        
          <p className='mt-2 text-[9px] md:text-[14px] leading-[12px]  md:leading-[20px] font-medium text-[#333333]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis</p>   
-        <button className='bg-[#B88E2F] mt-6  md:mt-4 w-[100px] h-[30px] md:w-[180px] md:h-[50px]  text-[10px] md:text-[16px] font-bold leading-[24px] text-white'>BUY NOW</button>
+       <Link href={'/Shop'}> <button className='bg-[#B88E2F] mt-6  md:mt-4 w-[100px] h-[30px] md:w-[180px] md:h-[50px]  text-[10px] md:text-[16px] font-bold leading-[24px] text-white'>BUY NOW</button></Link>
       </div>
     </div>
   )

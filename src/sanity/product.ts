@@ -8,6 +8,18 @@ export default {
         type: 'string',
         title: 'Name',
         validation: (Rule: any) => Rule.required().error('Name is required'),
+      },{
+        title: 'Slug',
+        name: 'slug',
+        type: 'slug',
+        options: {
+          source: 'name',
+          maxLength: 200, // will be ignored if slugify is set
+          slugify: (input:any) => input
+                               .toLowerCase()
+                               .replace(/\s+/g, '-')
+                               .slice(0, 200)
+        }
       },
       {
         name: 'image',
@@ -20,7 +32,7 @@ export default {
       },
       {
         name: 'price',
-        type: 'string',
+        type: 'number',
         title: 'Price',
         validation: (Rule: any) => Rule.required().error('Price is required'),
       },
@@ -43,12 +55,18 @@ export default {
         type: 'boolean',
         title: 'Is Featured Product',
       },
+       {
+        name:'quantity',
+        type: 'number',
+        title:'Quantity',
+      },
       {
         name: 'stockLevel',
         type: 'number',
         title: 'Stock Level',
         validation: (Rule: any) => Rule.min(0).error('Stock level must be a positive number.'),
       },
+     
       {
         name: 'category',
         type: 'string',

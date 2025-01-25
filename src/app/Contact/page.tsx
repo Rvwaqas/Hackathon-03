@@ -9,9 +9,56 @@ import { MdLocationPin } from "react-icons/md";
 import { GrTrophy } from "react-icons/gr";
 import { FaPhoneAlt } from "react-icons/fa";
 import { GoClockFill } from "react-icons/go";
+import { useState } from 'react'
+
+
+
 
 const page = () => {
-  return (
+  
+    
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject:'',
+        message: '',
+      });
+    
+      const [isSubmitting, setIsSubmitting] = useState(false);
+    
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+      };
+    
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+    
+        try {
+          const response = await fetch('/api/submitContact/route.ts', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          });
+    
+          if (response.ok) {
+            alert('Form submitted successfully!');
+            setFormData({ name: '', email: '',subject:'', message: '' }); // Clear form
+          } else {
+            alert('Failed to submit the form.');
+          }
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          alert('An error occurred. Please try again.');
+        } finally {
+          setIsSubmitting(false);
+        }
+      };
+    
+    return (
     <>
     <div className='w-[100%] h-screen'>
 
@@ -92,30 +139,31 @@ const page = () => {
         </div>
 
         <div className='w-[630px] h-[900px]'>
-                <div className='w-[530px] h-[730px] '>
+                <form  onSubmit={handleSubmit} className='w-[530px] h-[730px] '>
                 <div className='w-[90%] m-auto h-[121px] flex flex-col space-y-2'>
                         <label className='text-[16px] font-medium leading-[24px]'>Your Name</label>
-                        <input placeholder='abc' type='text' className='px-5 w-[70%] md:w-[100%] text-[#9F9F9F] border h-[60px] rounded-sm' />
+                        <input type="text" value={formData.name}   onChange={handleChange} placeholder='abc'  className='px-5 w-[70%] md:w-[100%] text-[#9F9F9F] border h-[60px] rounded-sm' />
                     </div>
                     <div className='w-[90%] m-auto h-[121px] flex flex-col space-y-2'>
                         <label className='text-[16px] font-medium leading-[24px]'>Email Address</label>
-                        <input type='email' placeholder='ABC@def.com' className='px-5 w-[70%] md:w-[100%] text-[#9F9F9F] border h-[60px] rounded-sm'  />
+                        <input type='email' value={formData.email}  onChange={handleChange} placeholder='ABC@def.com' className='px-5 w-[70%] md:w-[100%] text-[#9F9F9F] border h-[60px] rounded-sm'  />
                     </div>
                     <div className='w-[90%] m-auto h-[121px] flex flex-col space-y-2'>
                         <label className='text-[16px] font-medium leading-[24px]'>Subject</label>
-                        <input  placeholder='This is an optional' className='px-5 w-[70%] md:w-[100%] text-[#9F9F9F] border h-[60px] rounded-sm' type="text" />
+                        <input value={formData.subject} onChange={handleChange} placeholder='This is an optional' className='px-5 w-[70%] md:w-[100%] text-[#9F9F9F] border h-[60px] rounded-sm' type="text" />
                     </div>   
 
                     <div className='w-[90%] m-auto h-[121px] flex flex-col space-y-2'>
                         <label className='text-[16px] font-medium leading-[24px]'>Message</label>
-                        <input  placeholder='This is an optional' className='px-5 w-[70%] md:w-[100%] text-[#9F9F9F] border h-[120px] rounded-lg' type="text" />
+                        <input value={formData.message}  onChange={handleChange}  placeholder='This is an optional' className='px-5 w-[70%] md:w-[100%] text-[#9F9F9F] border h-[120px] rounded-lg' type="text" />
                     </div>
                     <div className='bg-[#B88E2F] w-[250px] h-[55px] rounded-[5px] border mt-16'>
-                        <h1 className='text-center font-normal text-[16px] leading-[24px] py-4 text-white'>Submit</h1>
+                        <button type="submit" disabled={isSubmitting} className='text-center w-[250px] h-[55px] font-normal text-[16px] leading-[24px] py-4 text-white'> {isSubmitting ? 'Submitting...' : 'Submit'}</button>
+                        
                     </div>
 
 
-                </div>
+                </form>
         </div>
 
 

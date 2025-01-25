@@ -10,6 +10,19 @@ export default {
         validation: (Rule: any) => Rule.required().error('Name is required'),
       },
       {
+        title: 'Slug',
+        name: 'slug',
+        type: 'slug',
+        options: {
+          source: 'name',
+        //   maxLength: 200, 
+          // slugify: input => input
+          //                      .toLowerCase()
+          //                      .replace(/\s+/g, '-')
+          //                      .slice(0, 200)
+        }
+      },
+      {
         name: 'image',
         type: 'image',
         title: 'Image',
