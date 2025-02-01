@@ -33,7 +33,7 @@ const Product = async () => {
   
   return (
     <>    
-    <div className=' text-center w-[80%] h-[1200px] md:h-[1084px] mt-[1100px] m-auto  md:mt-[50px]'>
+    <div className=' text-center w-[80%] h-[1400px] md:h-[1084px] mt-[1100px] m-auto  md:mt-[50px]'>
         <h1 className=' text-center font-bold text-[12px] md:text-[36px] leading-[48px]'>Our Products</h1>
           <div className="w-[100%]  m-auto flex flex-col sm:grid items-center justify-center  gap-y-[350px]  mt-8 sm:grid-cols-2 lg:grid-cols-4  "> 
           {
@@ -50,8 +50,8 @@ const Product = async () => {
           
           </div>
               
-          <div className='w-[35%] md:w-[20%] m-auto h-[45px] md:h-[52px] border border-[#B88E2F]   mt-[330px]'>
-                <Link href={'/Shop'} > <h1 className='py-3 text-[14px] md:text-[16px] font-semibold text-[#B88E2F]'>Show Now</h1></Link> 
+          <div className='w-[80%] md:w-[20%] m-auto h-[45px] md:h-[52px] border border-[#B88E2F] hover:bg-[#e7b746]   mt-[400px]'>
+                <Link href={'/Shop'} > <h1 className='py-3 text-[14px] md:text-[16px] font-semibold hover:text-white text-[#B88E2F]'>Show Now</h1></Link> 
           </div>
         
                 

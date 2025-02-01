@@ -220,7 +220,7 @@ const page = () => {
 {/* wininng section start */}
 
 <div className='bg-[#FAF3EA] w-[100%] h-[250px] lg:h-[270px] flex items-center mt-[1800px] md:mt-1  '>
-          <div className='grid grid-cols-1 md:grid-cols-4 justify-center items-center w-[90%] md:h-[60px] lg:[70px]  m-auto'>
+          <div className='grid grid-cols-1 md:grid-cols-4 justify-center items-center w-[100%] md:h-[60px] lg:[70px]  m-auto'>
                 {/* div 1 */}
                 <div className='w-[200px] m-auto flex justify-center mt-6  gap-2'>
                     <GrTrophy className='w-[30px] h-[30px] md:w-[35px] md:h-[35px] lg:w-[50px] lg:h-[50px]'/>

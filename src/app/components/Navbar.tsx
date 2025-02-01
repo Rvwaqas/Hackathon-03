@@ -1,52 +1,126 @@
-import React from 'react'
-import Image from 'next/image'
-import logo from '../assert/logo.png'
-import { BsPerson } from "react-icons/bs";
-import { CiSearch } from "react-icons/ci";
-import { IoMdHeartEmpty } from "react-icons/io";
-import { BsCart3 } from "react-icons/bs";
+"use client"
+import React from 'react';
+import { useState } from 'react';
+import Image from 'next/image';
+import logo from '../assert/logo.png';
+import { BsPerson } from 'react-icons/bs';
+import { CiSearch } from 'react-icons/ci';
+import { IoMdHeartEmpty } from 'react-icons/io';
+import { BsCart3 } from 'react-icons/bs';
+import { FaBars, FaTimes } from 'react-icons/fa'; // Hamburger and close icons
 import Link from 'next/link';
+import { MdAccountCircle } from "react-icons/md";
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <div className=' h-auto md:w-[100%] md:h-[100px] bg-[#ffffff]'>
-        <div className='flex justify-between w-[100%] h-auto md:w-[85%] md:h-[38px] py-2 px-5 m-auto'>
-               <div className='hidden md:block'>
-                <Image width={185} height={41} alt='help' src={logo}  className='w-[185px] h-[50px]' />
-               </div>
-               <div className='pt-5 hidden md:block'>
-                <ul className='flex justify-between font-medium  space-x-10 text-[16px]'>
-                <Link href="/">
-                  <li>Home</li>
-                </Link>
-                <Link href="/Shop">
-                  <li>Shop</li>
-                  </Link>
-                  <Link href='/Blog'>
-                  <li>Blog</li>
-                  </Link>
-                  <Link href='/Contact'>
-                  <li>Contact</li>
-                  </Link>
-                </ul>
-               </div>
-
-               <div className='pt-3 md:block hidden'>
-                <ul className='flex justify-between space-x-5'>
-                <li><BsPerson className='  w-[28px] h-[28px]' /></li>
-                <li><CiSearch className='w-[28px] h-[28px]' /></li>
-                <li><IoMdHeartEmpty className='w-[28px] h-[28px]' /></li>
-                <Link href={'/Cart'}><li><BsCart3 className='w-[28px] h-[28px]' /></li></Link>
-                </ul>
-
-                </div> 
+    <div className="h-auto w-full bg-[#ffffff]">
+      {/* Desktop Navbar */}
+      <div className="hidden md:flex justify-between w-full h-[100px] max-w-[1200px] px-5 mx-auto items-center">
+        {/* Logo */}
+        <div>
+          <Image width={185} height={41} alt="logo" src={logo} className="w-[185px] h-[50px]" />
         </div>
-        <div className='md:hidden block '>
-          <div className='flex justify-center pt-5 '>
-                <Image width={185} height={41} alt='help' src={logo}  className='w-[185px] h-[50px] ' />
-               </div>
-               </div>
-    </div>
-  )
-}
 
-export default Navbar
+        {/* Navigation Links */}
+        <div>
+          <ul className="flex justify-between font-medium space-x-10 text-[16px]">
+            <Link href="/">
+              <li className='text-[#B88E2F] font-medium'>Home</li>
+            </Link>
+            <Link href="/Shop">
+              <li className='text-[#B88E2F] font-medium'>Shop</li>
+            </Link>
+            <Link href="/Blog">
+              <li className='text-[#B88E2F] font-medium'>Blog</li>
+            </Link>
+            <Link href="/Contact">
+              <li className='text-[#B88E2F] font-medium'>Contact</li>
+            </Link>
+          </ul>
+        </div>
+
+        {/* Icons */}
+        <div>
+          <ul className="flex justify-between space-x-5">
+            <Link href="/Sign-up">
+              <li>
+                <BsPerson className="w-[28px] h-[28px] text-[#B88E2F]" />
+              </li>
+            </Link>
+            <li>
+              <CiSearch className="w-[28px] h-[28px] text-[#B88E2F]" />
+            </li>
+            <li>
+              <IoMdHeartEmpty className="w-[28px] h-[28px] text-[#B88E2F]" />
+            </li>
+            <Link href="/Cart">
+              <li>
+                <BsCart3 className="w-[28px] h-[28px] text-[#B88E2F]" />
+              </li>
+            </Link>
+          </ul>
+        </div>
+      </div>
+
+      {/* Mobile Navbar */}
+      <div className="md:hidden flex justify-between items-center px-5 py-4">
+        {/* Logo */}
+        <div>
+          <Image width={185} height={41} alt="logo" src={logo} className="w-[90px] h-[40px]" />
+        </div>
+
+        {/* Hamburger Menu Icon */}
+        
+        <div className='flex justify-end gap-4'>
+        <Link href="/Sign-up">
+              <h1>
+              <MdAccountCircle className="w-[28px] h-[28px] text-[#B88E2F]" /> 
+              </h1>
+            </Link>
+            <Link href="/">
+              <h1>
+              <BsCart3 className="w-[28px] h-[28px] text-[#B88E2F]" /> 
+              </h1>
+            </Link>
+        
+        <div onClick={toggleMobileMenu} className="cursor-pointer">
+          {isMobileMenuOpen ? (
+            <FaTimes className="w-6 h-6 text-[#B88E2F]" /> // Close icon
+          ) : (
+            <FaBars className="w-6 h-6 text-[#B88E2F]" /> // Hamburger icon
+          )}
+        </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-[#ffffff] w-full">
+          <ul className="flex flex-col items-center space-y-4 py-4">
+            <Link href="/">
+              <li>Home</li>
+            </Link>
+            <Link href="/Shop">
+              <li>Shop</li>
+            </Link>
+            <Link href="/Blog">
+              <li>Blog</li>
+            </Link>
+            <Link href="/Contact">
+              <li>Contact</li>
+            </Link>
+           
+            
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Navbar;

@@ -44,20 +44,24 @@ const Card1:React.FC<CardProp> = ({data}:CardProp) => {
   
 
   return (
-    <div className='w-[240px] h-[100px]'>
+    <div className='w-[240px] h-[180px] shadow-sm'>
       <Image src={urlFor(data.image).url()} alt="he" width={240}height={260} className='w-[285px] h-[300px]'/>
-      <div className='px-2 pt-2 bg-gray-100'>
-            <h1 className='text-[#3A3A3A] text-left font-bold text-[16px] '>{data.name}</h1>
-            <p className='text-left font-medium text-[16px] text-[#898989] '>{data.category}</p>
-            <div className='flex w-[220px] h-[30px] justify-start '>
-                <h1 className='font-semibold text-[20px] leading-[30px] text-[#3A3A3A]'>{data.price}</h1>
-              {/* <button className='font-normal py-1 px-4 text-[16px]   text-[#B0B0B0]'>Add to Cart</button>  */}
+      <div className='grid grid-cols-1 text-center border rounded-sm  p-3 bg-gray-100 w-[100%] h-[110%] '>
+            <h1 className='text-[#3A3A3A]  font-bold text-[16px] '>{data.name}</h1>
+            <p className=' font-medium text-[16px] text-[#898989] '>{data.category}</p>
+            <h1 className='font-semibold text-[14px] font-serif md:text-[16px] leading-[30px] text-red-700'>{(data.price).toLocaleString()}</h1> 
+            <div className='w-[80%] h-[30px] m-auto hover:bg-[#e7b746] translate-x-2 hover:text-white mb-1 rounded-sm border bg-[#B88E2F]'>
+            <button className='text-center font-semibold py-[2px] px-4 text-[16px]   text-black'>Buy Now</button>
             </div>
       </div>
-   
+     
 
     </div>
+   
   )
 }
 
 export default Card1
+
+
+
