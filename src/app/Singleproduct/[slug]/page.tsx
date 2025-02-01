@@ -263,7 +263,7 @@ import React from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { client } from '@/sanity/lib/client'
-import Link from 'next/link'
+
 
 interface Prop {
   params: {

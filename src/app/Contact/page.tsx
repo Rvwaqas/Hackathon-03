@@ -2,16 +2,12 @@
 
 
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Image from 'next/image';
 import { IoIosArrowForward } from 'react-icons/io';
-import { MdLocationPin } from 'react-icons/md';
-import { GrTrophy } from 'react-icons/gr';
-import { FaPhoneAlt } from 'react-icons/fa';
-import { GoClockFill } from 'react-icons/go';
-
+import { useState } from 'react';
 const Page = () => {
   const [formData, setFormData] = useState({
     name: '',
