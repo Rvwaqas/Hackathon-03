@@ -457,7 +457,7 @@
 //     setCart((prevCart) =>
 //       prevCart.map((item) =>
 //         item.id === id && item.quantity > 1
-//           ? { ...item, quantity: item.quantity - 1 }
+//          
 //           : item
 //       )
 //     );
@@ -695,7 +695,7 @@
 //   const handleDecreaseQuantity = (id: string) => {
 //     const updatedCart = cart.map((item) =>
 //       item.id === id && item.quantity > 1
-//         ? { ...item, quantity: item.quantity - 1 }
+//  
 //         : item
 //     )
 //     updateCart(updatedCart)
@@ -1006,6 +1006,45 @@ const CartPage: React.FC = () => {
         <div className='bg-[#FAF3EA] w-[100%] h-[250px] lg:h-[270px] flex items-center mt-16 md:mt-10'>
           <div className='grid grid-cols-1 md:grid-cols-4 justify-center items-center w-[90%] md:h-[60px] lg:[70px] m-auto'>
             {/* Winning section content */}
+                {/* div 1 */}
+                               <div className='w-[200px] m-auto flex justify-center mt-6  gap-2'>
+                                   <GrTrophy className='w-[30px] h-[30px] md:w-[35px] md:h-[35px] lg:w-[50px] lg:h-[50px]'/>
+                                   <div className='flex flex-col gap-1'>
+                                       <h1 className='text-[16px] md:text-[16px] font-semibold leading-[20px] md:leading-[20px] text-[#242424]'>Hight Quality</h1>
+                                       <h1 className='text-[12px] md:text-[12px] font-medium leading-[2px] md:leading-[15px] text-[#898989]'>crafted from top materials</h1>
+                                   </div>
+                               </div>
+                               {/* div 1 */}
+                               {/* div 2 */}
+                               <div className='w-[200px] m-auto flex justify-center mt-6  gap-2'>
+                                   <GrTrophy className='w-[30px] h-[30px] md:w-[35px] md:h-[35px] lg:w-[50px] lg:h-[50px]'/>
+                                   <div className='flex flex-col gap-1'>
+                                       <h1 className='text-[16px] md:text-[16px] font-semibold leading-[20px] md:leading-[20px] text-[#242424]'>Warranty Production</h1>
+                                       <h1 className='text-[12px] md:text-[12px] font-medium leading-[2px] md:leading-[15px] text-[#898989]'>Over 2 years</h1>
+                                   </div>
+                               </div>
+                               {/* div 2 */}
+                               {/* div 3 */}
+                               <div className='w-[200px] m-auto flex justify-center mt-6  gap-2'>
+                                   <GrTrophy className='w-[30px] h-[30px] md:w-[35px] md:h-[35px] lg:w-[50px] lg:h-[50px]'/>
+                                   <div className='flex flex-col gap-1'>
+                                       <h1 className='text-[16px] md:text-[16px] font-semibold leading-[20px] md:leading-[20px] text-[#242424]'>Free Shipping</h1>
+                                       <h1 className='text-[12px] md:text-[12px] font-medium leading-[2px] md:leading-[15px] text-[#898989]'>Order Over 150$</h1>
+                                   </div>
+                               </div>
+                               {/* div 3 */}
+                               {/* div 4 */}
+                               <div className='w-[200px] m-auto flex justify-center mt-6  gap-2'>
+                                   <GrTrophy className='w-[30px] h-[30px] md:w-[35px] md:h-[35px] lg:w-[50px] lg:h-[50px]'/>
+                                   <div className='flex flex-col gap-1'>
+                                       <h1 className='text-[16px] md:text-[16px] font-semibold leading-[20px] md:leading-[20px] text-[#242424]'>24/7 Support</h1>
+                                       <h1 className='text-[12px] md:text-[12px] font-medium leading-[2px] md:leading-[15px] text-[#898989]'>Dedicated support</h1>
+                                   </div>
+                               </div>
+                               {/* div 4 */}
+
+
+
           </div>
         </div>
 
