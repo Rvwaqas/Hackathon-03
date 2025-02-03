@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-
+import { useState } from 'react';
+import { useEffect } from 'react';
 // Define types
 interface Product {
   id: string;
@@ -8,7 +8,7 @@ interface Product {
   image: string;
 }
 
-const useCart = () => {
+const UseCart = () => {
   const [cart, setCart] = useState<Product[]>([]);
 
   // Load cart from localStorage on component mount
@@ -41,4 +41,4 @@ const useCart = () => {
   return { cart, addToCart, removeFromCart, clearCart, total };
 };
 
-export default useCart;
+export default UseCart;
