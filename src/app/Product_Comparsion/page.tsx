@@ -322,7 +322,7 @@
 // export default page
 
 
-
+// Now Edit the my hackathon 2 template 6
 
 'use client';
 import React from 'react';
@@ -355,15 +355,15 @@ const Page = () => {
             />
           </div>
           <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
-            <h1 className="text-2xl md:text-4xl font-bold text-white">
+            <h1 className="text-2xl md:text-4xl font-bold text-[#B88E2F]">
               Product Comparison
             </h1>
             <div className="flex items-center gap-2 mt-2">
-              <span className="text-sm md:text-base font-semibold text-white">
+              <span className="text-sm md:text-base font-semibold text-[#B88E2F]">
                 Home
               </span>
-              <IoIosArrowForward className="text-sm md:text-base text-white" />
-              <span className="text-sm md:text-base font-light text-white">
+              <IoIosArrowForward className="text-sm md:text-base text-[#B88E2F]" />
+              <span className="text-sm md:text-base font-light text-[#B88E2F]">
                 Comparison
               </span>
             </div>

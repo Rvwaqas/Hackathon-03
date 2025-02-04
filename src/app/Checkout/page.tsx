@@ -1,6 +1,3 @@
-
-
-
 'use client'
 import { useState } from "react";
 
@@ -10,18 +7,20 @@ const CheckoutPage: React.FC = () => {
     const handleCheckout = async () => {
         setLoading(true);
         try {
-            // Define the product data to send in the request body
-            const product = {
-                name: "Sample Product", // Replace with your product name
-                price: 1000, // Replace with your product price (in cents)
-            };
+            // Retrieve checkout data from localStorage
+            const checkoutData = JSON.parse(localStorage.getItem('checkoutData') || '[]');
+            console.log("Checkout Data:", checkoutData); // Debugging
 
-            const response = await fetch("/api/checkout", {
+            if (!Array.isArray(checkoutData) || checkoutData.length === 0) {
+                throw new Error("No items in the cart");
+            }
+
+            const response = await fetch("/api/create-checkout-session", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ product }), // Send product data in the request body
+                body: JSON.stringify({ product: checkoutData }), // Send the array of products
             });
 
             const data = await response.json();
@@ -37,7 +36,7 @@ const CheckoutPage: React.FC = () => {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen">
-            <h1 className="text-2xl font-bold mb-4">Stripe Hosted Checkout</h1>
+            <h1 className="text-2xl font-bold mb-4">Pak Chair Checkout</h1>
             <button
                 onClick={handleCheckout}
                 className="bg-blue-500 text-white px-6 py-3 rounded-lg"

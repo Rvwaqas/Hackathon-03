@@ -897,7 +897,8 @@ const CartPage: React.FC = () => {
   const handleCheckout = () => {
     // Save cart data to localStorage or pass it via query params
     localStorage.setItem('checkoutData', JSON.stringify(cart))
-    router.push('/Check_out')
+    router.push('/Checkout')
+    setCart([])
   }
 
   return (

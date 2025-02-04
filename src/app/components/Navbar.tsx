@@ -28,18 +28,18 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div>
-          <ul className="flex justify-between font-medium space-x-10 text-[16px]">
+          <ul className="flex justify-between font-medium space-x-10 text-[16px] ">
             <Link href="/">
-              <li className='text-[#B88E2F] font-medium'>Home</li>
+              <li className='text-[#B88E2F] hover:bg-yellow-600 hover:text-white rounded-sm hover:p-2  font-medium'>Home</li>
             </Link>
             <Link href="/Shop">
-              <li className='text-[#B88E2F] font-medium'>Shop</li>
+              <li className='text-[#B88E2F] hover:bg-yellow-600 hover:text-white rounded-sm hover:p-2 font-medium'>Shop</li>
             </Link>
             <Link href="/Blog">
-              <li className='text-[#B88E2F] font-medium'>Blog</li>
+              <li className='text-[#B88E2F] hover:bg-yellow-600 hover:text-white rounded-sm hover:p-2 font-medium'>Blog</li>
             </Link>
             <Link href="/Contact">
-              <li className='text-[#B88E2F] font-medium'>Contact</li>
+              <li className='text-[#B88E2F] hover:bg-yellow-600 hover:text-white rounded-sm hover:p-2 font-medium'>Contact</li>
             </Link>
           </ul>
         </div>
@@ -79,7 +79,7 @@ const Navbar = () => {
         <div className='flex justify-end gap-4'>
         <Link href="/Sign-up">
               <h1>
-              <MdAccountCircle className="w-[28px] h-[28px] text-[#B88E2F]" /> 
+              <MdAccountCircle className=" w-[28px] h-[28px] text-[#B88E2F]" /> 
               </h1>
             </Link>
             <Link href="/">

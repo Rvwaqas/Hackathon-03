@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import Link from 'next/link'
 const Footer = () => {
@@ -19,7 +20,7 @@ const Footer = () => {
                         <h1 className='font-normal text-[16px] leading-[24px] text-[#9F9F9F]'>Links</h1>
                         <Link href={'/'}><h1 className=' text-[16px] text-[#B88E2F] font-medium leading-[24px]'>Home</h1></Link>
                         <Link href={'/Shop'}><h1>Shop</h1></Link>
-                        <Link href={'/About'}><h1>About</h1></Link>
+                        <Link href={'/Product_Comparsion'}><h1>Product_Comparsion</h1></Link>
                         <Link href={'/Contact'}><h1>Contact</h1></Link>
 
                     </div>
@@ -27,7 +28,7 @@ const Footer = () => {
                         <h1 className='font-normal text-[16px] leading-[24px] text-[#9F9F9F]'>Help</h1>
                         <h1>Payment Option</h1>
                         <Link href={'/Shop'}><h1>Shop</h1></Link>
-                        <Link href={'/About'}><h1>About</h1></Link>
+                        <Link href={'/Product_Comparsion'}><h1>Product_Comparsion</h1></Link>
                         
 
                     </div>
