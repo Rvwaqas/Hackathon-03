@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 interface Data{
     id:number;
-    image:any;
+    image:string;
     category:string;
     name:string
     price:number;

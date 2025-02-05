@@ -40,7 +40,7 @@ const Card1:React.FC<CardProp> = ({data}:CardProp) => {
   }
   
 
-  const {image,name,category,price,id,quantity}=data;
+  
   
 
   return (
