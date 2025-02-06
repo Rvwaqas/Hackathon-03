@@ -23,7 +23,7 @@ interface CardProp{
 
 const Card1:React.FC<CardProp> = ({data}:CardProp) => {
   
-
+console.log(data)
 
   
   

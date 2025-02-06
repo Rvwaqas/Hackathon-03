@@ -82,7 +82,7 @@ const Navbar = () => {
               <MdAccountCircle className=" w-[28px] h-[28px] text-[#B88E2F]" /> 
               </h1>
             </Link>
-            <Link href="/">
+            <Link href="/Cart">
               <h1>
               <BsCart3 className="w-[28px] h-[28px] text-[#B88E2F]" /> 
               </h1>
