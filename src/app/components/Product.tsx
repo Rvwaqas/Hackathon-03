@@ -40,7 +40,7 @@ const Product = async () => {
             data.map((ele:Data)=>{
                   return(
                     <Link href={`Singleproduct/${ele.slug}`} key={ele.id}>
-                <Card1 key={ele.id} data={ele}/>
+                <Card1  data={ele}/>
                 </Link>
 
             )})
