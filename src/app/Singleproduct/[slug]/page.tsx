@@ -23,7 +23,8 @@ interface Data {
 }
 
 const Page = async ({ params }: Prop) => {
-  const query = `*[_type == "product" && slug.current == "${params.slug}"]{
+  
+  const productData = await client.fetch( `*[_type == "product" && slug.current == "${params.slug}"]{
     "id": _id,
     "image": image.asset->url,
     name,
@@ -31,8 +32,7 @@ const Page = async ({ params }: Prop) => {
     price,
     quantity
   }`
-
-  const productData = await client.fetch(query)
+)
 
   if (!productData || productData.length === 0) {
     throw new Error("Product not found")
