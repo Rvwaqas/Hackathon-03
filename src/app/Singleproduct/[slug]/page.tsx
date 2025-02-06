@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 interface Prop {
   params: {
-    slug: string
+    slug: string;
   }
 }
 
