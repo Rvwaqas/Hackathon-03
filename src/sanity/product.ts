@@ -1,3 +1,5 @@
+import { Rule } from 'sanity';
+
 export default {
     name: 'product',
     type: 'document',
@@ -7,7 +9,7 @@ export default {
         name: 'name',
         type: 'string',
         title: 'Name',
-        validation: (Rule: any) => Rule.required().error('Name is required'),
+        validation: (Rule: Rule) => Rule.required().error('Name is required'),
       },{
         title: 'Slug',
         name: 'slug',
@@ -15,7 +17,7 @@ export default {
         options: {
           source: 'name',
           maxLength: 200, // will be ignored if slugify is set
-          slugify: (input:any) => input
+          slugify: (input:string) => input
                                .toLowerCase()
                                .replace(/\s+/g, '-')
                                .slice(0, 200)
@@ -34,20 +36,20 @@ export default {
         name: 'price',
         type: 'number',
         title: 'Price',
-        validation: (Rule: any) => Rule.required().error('Price is required'),
+        validation: (Rule: Rule) => Rule.required().error('Price is required'),
       },
       {
         name: 'description',
         type: 'text',
         title: 'Description',
-        validation: (Rule: any) =>
+        validation: (Rule: Rule) =>
           Rule.max(150).warning('Keep the description under 150 characters.'),
       },
       {
         name: 'discountPercentage',
         type: 'number',
         title: 'Discount Percentage',
-        validation: (Rule: any) =>
+        validation: (Rule: Rule) =>
           Rule.min(0).max(100).warning('Discount must be between 0 and 100.'),
       },
       {

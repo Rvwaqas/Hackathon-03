@@ -16,7 +16,7 @@ import Pagination from '../components/Pagination'; // Import the Pagination comp
 
 interface Data {
   id: number;
-  image: any;
+  image: string;
   name: string;
   category: string;
   price: number;
@@ -26,7 +26,6 @@ interface Data {
 
 const Page = () => {
   const [products, setProducts] = useState<Data[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState<Data[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(8); // Number of products per page
@@ -44,9 +43,7 @@ const Page = () => {
         setFilteredProducts(data);
       } catch (error) {
         console.error('Error fetching data:', error);
-      } finally {
-        setIsLoading(false);
-      }
+      } 
     };
   
     fetchData();
@@ -109,7 +106,7 @@ const Page = () => {
           <div className='mt-2 w-[85%] h-auto m-auto'>
             <div className='grid grid-cols-1 justify-center sm:grid-cols-2 md:grid-cols-4 gap-y-[350px]'>
               {currentProducts.map((ele: Data) => (
-                <Link href={`/Singleproduct/${ele.slug}`} >
+                <Link href={`/Singleproduct/${ele.slug}`}  key={ele.id}>
                            <Card1 key={ele.id} data={ele}/>
                          </Link>
               ))}

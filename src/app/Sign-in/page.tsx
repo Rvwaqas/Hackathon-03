@@ -51,9 +51,14 @@ export default function SignIn() {
       } else {
         console.error(JSON.stringify(result, null, 2));
       }
-    } catch (err) {
-      console.error("error", err.errors[0].message);
-      setError(err.errors[0].message);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        console.error("Error:", err.message);
+        setError(err.message);
+      } else {
+        console.error("Unexpected error", err);
+        setError("An unexpected error occurred.");
+      }
     }
   }
 

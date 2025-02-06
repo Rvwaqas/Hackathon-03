@@ -42,7 +42,7 @@ const Page = async ({ params }: Prop) => {
   const product = productData[0]
 
   const handleAddToCart = (data: Data) => {
-    const notify = () => toast("Product Added into Cart");
+    
     const cart = JSON.parse(localStorage.getItem('cart') || '{}')
     if (cart[data.id]) {
       cart[data.id] = {
