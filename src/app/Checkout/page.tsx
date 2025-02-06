@@ -36,7 +36,7 @@ const CheckoutPage: React.FC = () => {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen">
-            <h1 className="text-2xl font-bold mb-4">Pak Chair Checkout</h1>
+            <h1 className="text-2xl font-bold mb-4">Furniro Checkout</h1>
             <button
                 onClick={handleCheckout}
                 className="bg-blue-500 text-white px-6 py-3 rounded-lg"
