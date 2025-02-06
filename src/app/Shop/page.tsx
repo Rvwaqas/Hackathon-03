@@ -24,26 +24,34 @@ interface Data {
   quantity: number;
 }
 
-const page = () => {
+const Page = () => {
   const [products, setProducts] = useState<Data[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState<Data[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(8); // Number of products per page
 
   useEffect(() => {
     const fetchData = async () => {
-      const query = `*[_type=='product'] | order(_createdAt desc){
-         _id, name, category,
-        price, "slug":slug.current,
-        "image":image.asset->url,quantity
-      }`;
-      const data: Data[] = await client.fetch(query);
-      setProducts(data);
-      setFilteredProducts(data);
+      try {
+        const query = `*[_type=='product'] | order(_createdAt desc){
+           _id, name, category,
+          price, "slug":slug.current,
+          "image":image.asset->url,quantity
+        }`;
+        const data: Data[] = await client.fetch(query);
+        setProducts(data);
+        setFilteredProducts(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setIsLoading(false);
+      }
     };
-
+  
     fetchData();
   }, []);
+  
 
   const handleSearch = (searchTerm: string) => {
     const filtered = products.filter(product =>
@@ -124,4 +132,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

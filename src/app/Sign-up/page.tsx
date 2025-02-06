@@ -70,7 +70,7 @@ const Signup = () => {
                     await setActive({session:completeSignup.createdSessionId})
                     router.push("/")
                 }
-            }catch(err:any){
+            }catch(err){
               console.error("error", err.errors[0].message);
               setError(err.errors[0].message);
             }

@@ -16,10 +16,11 @@ import {
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Eye, EyeOff } from "lucide-react";
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-Footer
+
+
+
 export default function SignIn() {
   const { isLoaded, signIn, setActive } = useSignIn();
   const [emailAddress, setEmailAddress] = useState("");
@@ -50,7 +51,7 @@ export default function SignIn() {
       } else {
         console.error(JSON.stringify(result, null, 2));
       }
-    } catch (err: any) {
+    } catch (err) {
       console.error("error", err.errors[0].message);
       setError(err.errors[0].message);
     }

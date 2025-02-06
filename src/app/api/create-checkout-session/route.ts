@@ -38,7 +38,7 @@ export async function POST(req: Request) {
         });
 
         return NextResponse.json({ url: session.url });
-    } catch (error: any) {
+    } catch (error) {
         console.error("Stripe Error:", error); // Log the error for debugging
         return NextResponse.json(
             { error: error.message || "Internal Server Error" },

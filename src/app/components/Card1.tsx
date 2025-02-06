@@ -24,21 +24,6 @@ interface CardProp{
 const Card1:React.FC<CardProp> = ({data}:CardProp) => {
   
 
-  
-
-  const handleClick=(data:Data)=>{
-
-    const cart= JSON.parse(localStorage.getItem('cart') || '{}');
-    if(cart[data.id]){
-        cart[data.id]={
-          ...cart[data.id], quantity:cart[data.id].quantity+1
-        } 
-    }else{
-      cart[data.id]={...data,quantity:1}
-    }
-      localStorage.setItem('cart',JSON.stringify(cart))
-  }
-  
 
   
   
