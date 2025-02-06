@@ -47,7 +47,7 @@ export default function SignIn() {
 
       if (result.status === "complete") {
         await setActive({ session: result.createdSessionId });
-        router.push("/dashboard");
+        router.push("/");
       } else {
         console.error(JSON.stringify(result, null, 2));
       }
@@ -69,7 +69,7 @@ export default function SignIn() {
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center">
-            Sign In to Todo Master
+            Sign In to Furniro
           </CardTitle>
         </CardHeader>
         <CardContent>
