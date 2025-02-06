@@ -102,8 +102,8 @@ const Page = () => {
 
         <SearchAndFilter onSearch={handleSearch} onFilter={handleFilter} />
 
-        <div className='mt-10 w-[100%] h-auto'>
-          <div className='mt-2 w-[85%] h-auto m-auto'>
+        <div className='mt-10 w-[80%] m-auto h-auto'>
+          <div className='mt-2 w-[100%] h-auto m-auto'>
             <div className='grid grid-cols-1 justify-center sm:grid-cols-2 md:grid-cols-4 gap-y-[350px]'>
               {currentProducts.map((ele: Data) => (
                 <Link href={`/Singleproduct/${ele.slug}`}  key={ele.id}>
