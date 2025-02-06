@@ -28,7 +28,7 @@ const Product = async () => {
   }`
 
   const data:[]=await client.fetch(qury);
-  console.log(data)
+  
  
   
   return (

@@ -12,7 +12,6 @@ interface Prop {
     slug: string;
   }
 }
-
 interface Data {
   id: string
   image: string
