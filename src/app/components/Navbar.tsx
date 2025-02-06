@@ -52,12 +52,8 @@ const Navbar = () => {
                 <BsPerson className="w-[28px] h-[28px] text-[#B88E2F]" />
               </li>
             </Link>
-            <li>
-              <CiSearch className="w-[28px] h-[28px] text-[#B88E2F]" />
-            </li>
-            <li>
-              <IoMdHeartEmpty className="w-[28px] h-[28px] text-[#B88E2F]" />
-            </li>
+           
+           
             <Link href="/Cart">
               <li>
                 <BsCart3 className="w-[28px] h-[28px] text-[#B88E2F]" />
