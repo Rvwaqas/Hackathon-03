@@ -7,7 +7,7 @@ import { urlFor } from '@/sanity/lib/image';
 
 interface Data{
     id:number;
-    image:any;
+    image:string;
     name:string;
     category:string;
     price:number;

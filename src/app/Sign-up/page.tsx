@@ -48,9 +48,14 @@ const Signup = () => {
                 strategy:"email_code"
                })
                setPendingVerification(true)
-        }catch(err:any){
-          console.error("error", err.errors[0].message);
-          setError(err.errors[0].message);
+        }catch (err: unknown) {
+          if (err instanceof Error) {
+            console.error("Error:", err.message);
+            setError(err.message);
+          } else {
+            console.error("Unexpected error", err);
+            setError("An unexpected error occurred.");
+          }
         }
     
     }

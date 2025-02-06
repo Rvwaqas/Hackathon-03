@@ -66,7 +66,7 @@ export default {
         name: 'stockLevel',
         type: 'number',
         title: 'Stock Level',
-        validation: (Rule: any) => Rule.min(0).error('Stock level must be a positive number.'),
+        validation: (Rule: Rule) => Rule.min(0).error('Stock level must be a positive number.'),
       },
      
       {
@@ -79,7 +79,7 @@ export default {
             { title: 'Sofa', value: 'Sofa' },
           ],
         },
-        validation: (Rule: any) => Rule.required().error('Category is required'),
+        validation: (Rule: Rule) => Rule.required().error('Category is required'),
       },
     ],
   };

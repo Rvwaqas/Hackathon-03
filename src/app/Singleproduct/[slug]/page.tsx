@@ -5,8 +5,7 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { client } from '@/sanity/lib/client'
 import Link from 'next/link'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 interface Prop {
   params: {
@@ -96,7 +95,7 @@ const Page = async ({ params }: Prop) => {
 
                   className="flex ml-auto text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded"
                 >
-                 <ToastContainer/>
+                 
                   Add to Cart
                 </button>
                 </div>
